@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <!-- as django forms is only capable of making input elemnts using python oops concept we need
+        to create a template that will make a form using form tag,csrf token ,submit method ,action,jinja printing tag to create that input field that 
+    willl be visible in our frontend(form)-->
+        <h1>Student Details Forms</h1>                 
+        <form  method="POST">
+            {% csrf_token %}
+              {{ ESFO.as_p }}         <!---as we are creating objects so it will create one row or display each input field as one row after another.as_p#####->used to display input field as one para with some padding hence looks  good in format-->
+
+              <!--{{ ESFO.as_table}}        ###.as_table####=display data in form of table means all the input field will come in same line horizontally or act as thead when compared to table tag in html
+              {{ ESFO.as_ul}}           ###.as_ul####=to display data as unoderred list with bullet points in starting of each input field
+              {{ ESFO}}            ##### it will display all the input fields(rows in oops)one after another without any gap-->
+             
+     
+            <input type="submit">
+
+        </form>
+    </center>
+</body>
+</html>
